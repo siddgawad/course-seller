@@ -6,6 +6,8 @@ export async function GET() {
     return Response.json({ ok: true, db: "ok" });
   } catch (e) {
     console.error("Database health check failed:", e);
-    return new Response(JSON.stringify({ ok: false, db: "down" }), { status: 500 });
+    return new Response(JSON.stringify({ ok: false, db: "down" }), {
+      status: 500,
+    });
   }
 }
